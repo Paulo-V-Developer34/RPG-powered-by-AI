@@ -1,0 +1,66 @@
+header {
+    background-color: rgb(37, 37, 37); /*eu substitui o background do UL pelo background aqui do header */
+    height: 120px;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between; /*justify-content: space-between; */
+    list-style: none;
+    align-items: center; 
+    /* align-items: center; centraliza os itens na vertical */
+
+    /* gap: ;
+    align-items: ; */
+}
+
+li {
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /*as demais fontes só irão aparecer caso ocorra um erro */
+    color: aliceblue;
+    padding: 10px;
+    margin: rgb(37, 37, 37) solid 2px;
+    border-radius: 4px;
+}
+
+a {
+    color: white;
+}
+
+li :hover { 
+    background-color: rgb(146, 146, 146);
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* border: red solid 5px; */
+}
+
+#ia-chat {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+i h1 {
+    font-size: 25px;
+}
+
+#conversa {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color: aliceblue;
+    border-radius: 8px;
+}
