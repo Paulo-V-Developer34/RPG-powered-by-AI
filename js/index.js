@@ -1,56 +1,31 @@
-const form = document.querySelector("#ia-chat")
+//AVISOS
+//
+//
 
-form.addEventListener("submit",(event)=>{
-    event.preventDefault()
+//notas
+//
+//
 
-    text = document.querySelector("#respo-text").value
-    alert(text)
+//importação da API_KEY
+document.getElementById('ia-chat').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-    /*
-    * Install the Generative AI SDK
-    *
-    * $ npm install @google/generative-ai
-    */
+    const texto = document.getElementById('respo-text').value;
 
-    const {
-    GoogleGenerativeAI,
-    HarmCategory,
-    HarmBlockThreshold,
-    } = require("@google/generative-ai");
-    
-    const apiKey = process.env.GEMINI_API_KEY;
-    const genAI = new GoogleGenerativeAI(apiKey);
-    
-    const model = genAI.getGenerativeModel({
-        model: "gemini-1.5-flash",
-    });
-    
-    const generationConfig = {
-        temperature: 1,
-        topP: 0.95,
-        topK: 64,
-        maxOutputTokens: 8192,
-        responseMimeType: "text/plain",
+    const text = {
+        texto
     };
-    
-    async function run() {
-        const parts = [
-        {text: "input: crie para min um RPG espacial"},
-        {text: "output: Você está em uma nave espacial, quando de repente houve um barulho no espaço.\no que você faz?\n\n1. olha pela janela\n2. tranca as portas\n3. se esconde"},
-        {text: "input: crie um rpg de sobrevivência"},
-        {text: "output: Você está em uma floresta nevada, onde o perigo está presente o tempo inteiro. Você começa a sentir fome.\nO que você faz?\n\n1. procura comida na floresta\n2. procura comida no rio\n3. procura uma caverna"},
-        {text: "input: "},
-        {text: "output: "},
-        ];
-    
-        const result = await model.generateContent({
-        contents: [{ role: "user", parts }],
-        generationConfig,
-    // safetySettings: Adjust safety settings
-    // See https://ai.google.dev/gemini-api/docs/safety-settings
-        });
-        console.log(result.response.text());
-    }
-    
-    run();
-})
+
+    alert("deu certo 1")
+
+    const response = await fetch('http://localhost:3000/ai-chat', { //o "ai-chat" vai indicar o que será executado no index.js do node
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(text)
+    });
+
+    const result = await response.json();
+    console.log(result);
+});
