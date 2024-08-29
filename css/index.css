@@ -70,6 +70,7 @@ i h1 {
 
 #respo-text {
     width: 100%;
+    border-radius: 10px;
 }
 
 #teste-node {
@@ -108,4 +109,8 @@ i h1 {
 
 .txterror {
     background-color: rgb(214, 96, 96) !important;
+}
+
+#btn-respo {
+    border-radius: 50%;
 }
