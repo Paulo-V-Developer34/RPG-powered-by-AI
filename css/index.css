@@ -80,7 +80,7 @@ i h1 {
 }
 
 .textochat {
-    background-color: rgb(214, 222, 230) !important;
+    background-color: rgb(214, 222, 230);
     border: 1px solid black;
     border-radius: 10px;
     width: 100%;
@@ -94,4 +94,18 @@ i h1 {
 .textochat p {
     font-size: 20px !important;
     margin: 5px;
+}
+
+#chat {
+    width: 100%;
+    margin: 10px;
+}
+
+.iachat {
+    margin-right: 25px !important;
+    background-color: rgb(171, 182, 192) !important;
+}
+
+.txterror {
+    background-color: rgb(214, 96, 96) !important;
 }
