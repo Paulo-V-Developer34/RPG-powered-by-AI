@@ -29,3 +29,14 @@ document.getElementById('ia-chat').addEventListener('submit', async function(eve
     const result = await response.json();
     console.log(result);
 });
+
+function teste() {
+    alert("o teste funcionou")
+    fetch('http://localhost:3000/teste')
+    .then(response => response.text()) // Converte a resposta para texto
+    .then(data => {
+        console.log(data); // Exibe a resposta no console
+        // Você pode fazer outras coisas com 'data' aqui, como exibir na página
+    })
+    .catch(error => console.error('Erro:', error)); // Captura e exibe erros
+}
