@@ -2,15 +2,58 @@
 //
 //
 
+
+//importações
+// import dialogo from './criardialogo.js'; //importação inutilizada no momento
+
 //notas
 //
 //
+
+//variaveis
+let numchat = 0
 
 //importação da API_KEY
 document.getElementById('ia-chat').addEventListener('submit', async function(event) {
     event.preventDefault();
 
     const texto = document.getElementById('respo-text').value;
+
+    //criar elemento
+    //criar div
+    // document.getElementById('conversa')
+        // .appendChild(document.createElement('div').setAttribute('id', 'chatUser1'))
+    numchat += 1
+    //criar div
+    const userDiv = document.createElement('div')
+    userDiv.setAttribute('id', 'chatUser'+numchat)
+    userDiv.setAttribute('class', 'textochat')
+    document.getElementById('conversa').appendChild(userDiv)
+    // userDiv.innerHTML = `<p>${texto}<p>`
+    const userMSGContainer = document.getElementById('chatUser'+numchat)
+    const chatUserName = document.createElement('h1')
+    chatUserName.setAttribute('id', 'chatUserName'+numchat)
+    chatUserName.innerHTML = "Usuário"
+    userMSGContainer.appendChild(chatUserName)
+    //criar texto
+    const chatUserText = document.createElement('p')
+    chatUserText.setAttribute('id', 'chatUserText'+numchat)
+    chatUserText.innerHTML = texto
+    userMSGContainer.appendChild(chatUserText)
+
+    
+
+    //criar h1
+    
+
+    chatContainer.appendChild(document.createElement('h1').setAttribute('id', 'chatutext1'))
+    
+
+    // userText.innerHTML = `<p>${texto}<p>`
+    // numchat += 1
+    // userText.id = numchat
+    // userText.className = "textochat"
+    // chat.appendChild(this.innerHTML = "<h1>Usuário<h1>")
 
     const text = {
         texto
