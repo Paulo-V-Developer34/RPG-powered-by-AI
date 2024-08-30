@@ -23,11 +23,16 @@ document.getElementById('ia-chat').addEventListener('submit', async function(eve
     usardialogo.gerartexto("Usuário", texto)
 
     //gerar a mensagem da ia no DOM
-    function msgIA(mensagem) {
-        if (mensagem.error != '') {
-            document.getElementById(usardialogo.gerartexto("IA", mensagem.error)).classList.add("iachat").classList.add("txterror")
+    function msgIA(mensagem, error) {
+        if (error == true) {
+            console.log("deu errado")
+            document.getElementById(usardialogo.gerartexto("IA", mensagem)).classList.add("txterror")
+            let lastChild = document.getElementById("chat").lastChild
+            lastChild.classList.add("txterror")
+            // document.getElementById(usardialogo.gerartexto("IA", mensagem))
         }else{
-            document.getElementById(usardialogo.gerartexto("IA", mensagem.message)).classList.add("iachat")
+            console.log("deu certo")
+            document.getElementById(usardialogo.gerartexto("IA", mensagem)).classList.add("iachat")
         }
     }
 
@@ -35,9 +40,11 @@ document.getElementById('ia-chat').addEventListener('submit', async function(eve
        "texto": texto
     };
 
+    console.log(textojson)
+
     try{
         //enviando o form para o servidor
-        var response = await fetch('http://localhost:3000/api/ai-chat', { //o "ai-chat" vai indicar o que será executado no index.js do node
+        var response = await fetch('http://localhost:3000/user2/teste2', { //o "ai-chat" vai indicar o que será executado no index.js do node
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -50,11 +57,11 @@ document.getElementById('ia-chat').addEventListener('submit', async function(eve
             throw new Error(`HTTP error! status: ${response.status}`);
         }
     } catch(error) {
-        msgIA({error: error})
+        msgIA(error, true)
     } finally {
         //pegando a resposta do servidor
         const result = await response.json();
-        msgIA(result)
+        msgIA(JSON.stringify(result.message), false)
     }
 });
 
