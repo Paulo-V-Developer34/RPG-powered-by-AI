@@ -1,8 +1,23 @@
 header {
-    background-color: rgb(37, 37, 37); /*eu substitui o background do UL pelo background aqui do header */
-    height: 120px;
+    background-color: rgb(107, 98, 85); /*eu substitui o background do UL pelo background aqui do header */
+    height: 100%;
+    width: 100%;
     padding: 0px;
     margin: 0px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+body {
+    background-color: rgb(250, 243, 234);
+    padding: 0px;
+    /* width: 100%;
+    height: 100%; */
+}
+
+nav {
+    width: 100%;
+    height: 100%;
 }
 
 ul {
@@ -19,14 +34,14 @@ ul {
 li {
     font-size: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif; /*as demais fontes só irão aparecer caso ocorra um erro */
-    color: aliceblue;
-    padding: 10px;
-    margin: rgb(37, 37, 37) solid 2px;
+    color: rgb(250, 243, 234);
+    /* padding: 10px;
+    margin: rgb(37, 37, 37) solid 2px; */
     border-radius: 4px;
 }
 
 a {
-    color: white;
+    color: rgb(250, 243, 234);
 }
 
 li :hover { 
@@ -54,7 +69,9 @@ main {
 }
 
 i h1 {
-    font-size: 25px;
+    font-size: 20px;
+    margin: 2px;
+    padding: 1px;
 }
 
 #conversa {
@@ -62,7 +79,6 @@ i h1 {
     flex-direction: column;
     margin: 20px;
     padding: 30px;
-    background-color: aliceblue;
     border-radius: 8px;
     width: 60%;
     border-radius: 10px;
@@ -73,19 +89,15 @@ i h1 {
     border-radius: 10px;
 }
 
-#teste-node {
-    width: 150px;
-    height: 50px;
-    padding: 8px;
-    margin: 8px;
-}
-
 .textochat {
-    background-color: rgb(214, 222, 230);
+    background-color: rgb(230, 220, 207);
     border: 1px solid black;
     border-radius: 10px;
     width: 100%;
     margin: 20px;
+    -webkit-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
 }
 
 .textochat h1 {
@@ -104,7 +116,10 @@ i h1 {
 
 .iachat {
     margin-right: 25px !important;
-    background-color: rgb(171, 182, 192) !important;
+    background-color: rgb(219, 208, 193) !important;
+    -webkit-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
 }
 
 .txterror {
@@ -113,4 +128,21 @@ i h1 {
 
 #btn-respo {
     border-radius: 50%;
+}
+
+i {
+    border: solid black 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 220, 207);
+    -webkit-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    width: 85px;
+    height: 85px;
+    gap: 0px;
+    margin: 12px;
 }
