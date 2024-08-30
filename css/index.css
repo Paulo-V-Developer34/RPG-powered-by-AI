@@ -34,7 +34,7 @@ ul {
 li {
     font-size: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif; /*as demais fontes só irão aparecer caso ocorra um erro */
-    color: rgb(250, 243, 234);
+    color: black;
     /* padding: 10px;
     margin: rgb(37, 37, 37) solid 2px; */
     border-radius: 4px;
@@ -145,4 +145,13 @@ i {
     height: 85px;
     gap: 0px;
     margin: 12px;
+}
+
+.iaicon {
+    background-color: rgb(219, 208, 193) !important;
+}
+
+.gcontainer {
+    display: flex;
+    width: 100%;
 }
