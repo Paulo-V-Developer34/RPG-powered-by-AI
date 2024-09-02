@@ -1,3 +1,10 @@
+/*NOTAS
+
+# quanto aos pixels
+Não utilize tamanho dos pixels, pois cada munitor possui uma quantidade específica de pixels, enquanto neste PC a quantidade de pixels do header deve ser de 1880px no peu PC deve ser 1320px
+
+*/
+
 header {
     display: flex;
     flex-direction: column;
@@ -6,7 +13,7 @@ header {
     top: 0;
     background-color: rgb(107, 98, 85); /*eu substitui o background do UL pelo background aqui do header */
     height: 90px;
-    width: 1320px;
+    width: 1880px;
     padding: 0px;
     margin: 0px;
     border: 3px solid black;
@@ -164,4 +171,8 @@ i {
 .gcontainer {
     display: flex;
     width: 100%;
+}
+
+ul li.especial {
+    text-align: left;
 }
