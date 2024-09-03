@@ -1,50 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPG do Paulo</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="https://thumb.ac-illust.com/41/4137d1a06f24fba4ad746d7672551894_t.jpeg">
-    <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-        }
-    </style>
+    <link rel="icon" href="https://thumb.ac-illust.com/41/4137d1a06f24fba4ad746d7672551894_t.jpeg" type="image/x-icon">
+    <title>RPG do Paulo - Login</title>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li style="color: rgb(250, 243, 234);" class="especial">RPG do Paulo</li>
-                <li><a href="index2.html">SAIR</a></li>
-                <li id="user-icon">
-                    <i>
-                        <img class="icon" src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt="imagem da foto de usuário">
-                        <h1 class="nome">Usuário</h1>
-                    </i>
-                </li>
-            </ul>
-        </nav>
-    </header>    
-    <main>
-        <!-- <div id="ia-icon">
-            <i id="AI">
-                <img class="icon" src="https://thumb.ac-illust.com/41/4137d1a06f24fba4ad746d7672551894_t.jpeg" alt="imagem de uma IA">
-                <h1 class="nome">I.R.P.</h1>
-            </i>
-        </div> -->
-        <div id="conversa">
-            <div id="chat"></div>
-            <form id="ia-chat">
-                <!-- <label for="respo-text"></label> -->
-                <input type="text" placeholder="Insira sua decisão" id="respo-text">
-                <button id="btn-respo" style="padding: 0px;" type="submit"><img class="icon" src="https://cdn0.iconfinder.com/data/icons/round-action-bar/48/send-256.png" alt="botão de enviar"></button>
-            </form>
+    <div id="modallogin" class="w3-container w3-round-xxlarge w3-display-middle w3-card-4 w3-third ">
+        <div class="w3-center">
+            <br>
+            <h2>RPG do Paulo</h2>
         </div>
-    </main>
-    <script src="new.js"></script>
-    <script src="./dist/bundle.js"></script>
+        <form class="w3-container " action="loginAction.php" method="post">
+            <div class="w3-section">
+                <label style="font-weight: bold;">Usuário</label>
+                <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Digite o cpf (somente números)" name="txtCpf" required>
+                <label style="font-weight: bold;">Senha</label>
+                <input class="w3-input w3-border" type="password" placeholder="Digite a Senha" name="txtSenha" required>
+                <a id="homebtn" class="w3-button w3-block w3-section w3-padding" href="home.html" name="btnEntrar">Entrar</a>
+            </div>
+        </form>
+        <br>
+    </div>
 </body>
+
 </html>

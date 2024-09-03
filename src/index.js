@@ -8,7 +8,7 @@
 import { dialogo } from './dialogo.js';
 const usardialogo = new dialogo();
 import showdown from 'showdown';
-
+let converter = new showdown.Converter();
 //notas
 //
 //
@@ -41,7 +41,7 @@ document.getElementById('ia-chat').addEventListener('submit', async function(eve
 
     try{
         //enviando o form para o servidor
-        var response = await fetch('http://localhost:3000/user2/teste2', { //o "ai-chat" vai indicar o que será executado no index.js do node
+        var response = await fetch('http://localhost:3000/aiapi/chat', { //o "ai-chat" vai indicar o que será executado no index.js do node
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -56,7 +56,6 @@ document.getElementById('ia-chat').addEventListener('submit', async function(eve
 
         //pegando a resposta do servidor
         let result = await response.json();
-        let converter = new showdown.Converter();
         let mkhtml = converter.makeHtml(JSON.stringify(result.message))
         msgIA(mkhtml, false)
     } catch(error) {
