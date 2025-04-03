@@ -16,7 +16,7 @@ header {
     top: 0;
     background-color: rgb(107, 98, 85); /*eu substitui o background do UL pelo background aqui do header */
     height: 90px;
-    width: 1880px;
+    width: 95%;
     padding: 0px;
     margin: 0px;
     border: 3px solid black;

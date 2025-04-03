@@ -56,8 +56,8 @@ document.getElementById('ia-chat').addEventListener('submit', async function(eve
 
         //pegando a resposta do servidor
         let result = await response.json();
-        let mkhtml = converter.makeHtml(JSON.stringify(result.message))
-        msgIA(mkhtml, false)
+        let mkhtmlTexto = converter.makeHtml(JSON.stringify(result.texto)) // !!!AINDA FALTA O result.opcoes
+        msgIA(mkhtmlTexto, false)
     } catch(error) {
         msgIA(error, true)
     }
