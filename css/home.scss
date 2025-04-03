@@ -1,0 +1,218 @@
+/*NOTAS
+
+# quanto aos pixels
+Não utilize tamanho dos pixels, pois cada munitor possui uma quantidade específica de pixels, enquanto neste PC a quantidade de pixels do header deve ser de 1880px no peu PC deve ser 1320px
+
+*/
+
+
+//códigos SCSS
+// mixin SCSS //eu estou usando mixin, ele é tipo uma super variaável pois ele guarda muito código css
+
+@mixin sombra() {
+    -webkit-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.75);
+}
+
+//variáveis
+$marronclaro1:  rgb(250, 243, 234);
+
+
+/* Tags */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    height: 90px;
+    width: 95%;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+body {
+    background-color: $marronclaro1;
+    padding: 0px;
+    /* width: 100%;
+    height: 100%; */
+}
+
+i {
+    border: solid black 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 220, 207); //aqui eu vou colocar aquele mixin
+    @include sombra();//aqui
+    width: 70px;
+    height: 70px;
+    gap: 0px;
+    margin: 12px;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    gap: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /*justify-content: space-between; */
+    list-style: none;
+    align-items: center;
+    border: solid black 2px;
+    margin: 0px;
+    border: 0px;
+    // 
+    background-color: rgb(107, 98, 85); /*eu substitui o background do UL pelo background aqui do header */
+    border: 3px solid black;
+    border-radius: 10px;
+    /* align-items: center; centraliza os itens na vertical */
+
+    /* gap: ;
+    align-items: ; */
+}
+
+li {
+    font-size: 500%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /*as demais fontes só irão aparecer caso ocorra um erro */
+    color: black;
+    /* padding: 10px;
+    margin: rgb(37, 37, 37) solid 2px; */
+    border-radius: 4px;
+}
+
+main {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* border: red solid 5px; */
+}
+
+a {
+    color:  $marronclaro1;
+}
+
+li :hover { 
+    background-color: rgb(146, 146, 146);
+}
+
+i h1 {
+    font-size: 15px;
+    margin: 2px;
+    padding: 1px;
+}
+
+ul li.especial {
+    text-align: left;
+}
+
+
+/* IDs */
+
+#ia-chat {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#conversa {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 8px;
+    width: 60%;
+    border-radius: 10px;
+}
+
+#respo-text {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#btn-respo {
+    border-radius: 50%;
+}
+
+#chat {
+    width: 100%;
+    margin: 10px;
+}
+
+
+/*classes*/
+
+.iachat {
+    margin-right: 25px !important;
+    background-color: rgb(219, 208, 193) !important;//aqui também aquiiiiiiiiiiiiiiiiiiiii aksjdflkasdjfkjhasdiufhiawudhfuiwehuifhwauifhyudwaawegrarweg
+    @include sombra();
+}
+
+.textochat {
+    background-color: rgb(230, 220, 207);
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px;
+   @include sombra();
+}
+
+.textochat h1 {
+    font-size: 25px !important;
+    margin: 5px;
+}
+.textochat p {
+    font-size: 20px !important;
+    margin: 5px;
+}
+
+.txterror {
+    background-color: rgb(214, 96, 96) !important;
+}
+
+.icon {
+    height: 25px;
+    width: 25px;
+}
+
+//ou
+
+.iaicon {
+    background-color: rgb(219, 208, 193) !important;
+}
+
+.gcontainer {
+    display: flex;
+    width: 100%;
+}
+
+//versão do site para celular
+
+@media(max-width : 800px) and (min-width:300px){
+    #conversa {width: 90%;}
+    body {
+        height: 100%;
+    }
+
+    li {
+        font-size: 8vw;
+    }
+
+    ul {
+        height: 40vw;
+    }
+
+    main {margin-top: 40vw;}
+}

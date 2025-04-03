@@ -37,7 +37,7 @@ document.getElementById('ia-chat').addEventListener('submit', async function(eve
        "texto": texto
     };
 
-    console.log(textojson)
+    console.log(textojson + "esse é o texto em JSON")
 
     try{
         //enviando o form para o servidor
